@@ -35,13 +35,14 @@
     --black: #000000;
     --white: #ffffff;
     --orange: #FF9900;
+    --rich_orange: #E1670E;
     --gray: #CACACA;
     --dark_gray: #414141;
 
 }
 
 * {
-    box-sizing: border-box;
+    box-sizing: border-box ;
 }
 
 html{
@@ -51,6 +52,7 @@ html{
 
 a{
     text-decoration: none;
+    color: inherit;
 }
 
 ul{
@@ -64,10 +66,10 @@ img{
 }
 
 .container{
-    /* max-width: 1770px; */
-    padding: 0 15px;
-    max-width: 1800px;
-    margin: 0 auto;
+    max-width: 1770px;
+    /* padding: 0 15px; */
+    /* max-width: 1800px; */
+    margin: 0 15px;
 }
 
 .flex{
@@ -80,9 +82,9 @@ img{
     color: var(--white);
     font-size: 23px;
     font-weight: 700;
-    line-height: 28px;
+    line-height: 28.04px;
     text-align: center;
-    padding: 18.57px, 37.14px, 18.57px, 37.14px;
+    /* padding: 18.57px, 37.14px, 18.57px, 37.14px; */
     border-radius: 16px;
     cursor: pointer;
     /* display: inline-block; */
@@ -118,6 +120,13 @@ h2,h3,p{
 
 }
 
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{
+    color: var(--gray);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 32px;
+}
+
 /* Header */
 
 .header{
@@ -126,6 +135,7 @@ h2,h3,p{
     border-radius: 0 0 32px 32px;
     margin-bottom: 50px;
     width: 100%;
+    padding-top: 14px;
 }
 
 .header__container{
@@ -137,10 +147,15 @@ h2,h3,p{
     margin-right: auto;
 }
 
+.logo{
+    width: 225px;
+    height: 72px;
+}
+
 
 .header__nav{
     margin-right: 260px;
-
+    margin-left: 30px;
 }
 
 .header__nav__list{
@@ -152,7 +167,7 @@ h2,h3,p{
 }
 
 .header__nav__item:not(:last-child){
-    margin-right: 85px;
+    margin-right: 80px;
 }
 
 .header__nav__link{
@@ -160,15 +175,46 @@ h2,h3,p{
     font-size: 18px;
     line-height: 21.94px;
     font-weight: 600;
+    padding: 5px;
+    transition-property: color, border-bottom, outline;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
 }
 
-.header__search {
+.header__nav__link:hover{
+    border-bottom: 2px solid var(--orange);
+}
+
+.header__nav__link:focus{
+    /* outline: none; */
+    outline: 2px solid var(--orange);
+}
+
+.header__nav__link:active{
+    outline: none;
+    border-bottom: 2px solid var(--rich_orange);
+    color: var(--rich_orange);
+}
+
+.header__search{
     /* margin-left: 260px; */
-    width: 25px;
-    height: 25px;
+    width: 26px;
+    height: 26px;
     background: url(../img/Search.svg) center center no-repeat transparent;
     background-size: contain;
     border: none;
+    transition-property: background, outline;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+}
+
+.header__search:hover{
+    background: url(../img/Search_orange.svg) center center no-repeat transparent;
+}
+
+.header__search:focus{
+    outline: 2px solid var(--orange);
+    outline-offset: 4px;
 }
 
 /* HERO */
@@ -181,7 +227,7 @@ h2,h3,p{
     background: url(../img/hero/hero1.png) center center no-repeat transparent;
     background-size: cover;
     border-radius: 32px;
-    padding-top: 100px;
+    padding: 100px 15px 0 15px;
 }
 
 .hero_content{
@@ -207,7 +253,7 @@ margin: 24px 0;
 }
 
 .hero__btn{
-    margin-top: 90px;
+    margin-top: 66px;
     margin-bottom: 100px;
 }
 
@@ -301,7 +347,7 @@ margin: 24px 0;
 
 /* HOW */
 .how{
-    margin-bottom: 100px;
+    margin-bottom: 110px;
 }
 .how__heading{
     margin-bottom: 50px;
@@ -320,7 +366,7 @@ margin: 24px 0;
 
 .how__cards_list{
     justify-content: space-between;
-    gap: 0 15px;
+    gap: 0 30px;
 }
 
 .how__cards__item{
@@ -338,10 +384,13 @@ margin: 24px 0;
     background-image: url(../img/how/how_cons.png);
     background-repeat: no-repeat;
     border-radius: 32px;
+    background-size: cover;
+    /* padding-top: 31px; */
+    margin-top: 8px;
 }
 
 .how__cards__item__buttoms{
-    margin-top: 18px;
+    margin-top: 19px;
 }
 
 .how__cards__item__buttoms__detail{
@@ -351,7 +400,7 @@ margin: 24px 0;
     font-size: 16px;
     font-weight: 700;
     line-height: 19.5px;
-    margin-right: 32px;
+    margin-right: 28px;
 }
 
 .how__cards__item__buttoms__contract{
@@ -376,7 +425,7 @@ margin: 24px 0;
 }
 
 .faq__item{
-    padding: 40px 0;
+    padding: 39px 0;
     border-top: 1px solid var(--gray);
     font-size: 24px;
     font-weight: 700;
@@ -401,12 +450,16 @@ margin: 24px 0;
     margin-top: 50px;
 }
 
+.footer__col:nth-child(2){
+    margin-left: 113px;
+}
+
 .footer__col:last-child{
     margin-top: 137px;
 }
 
 .logo_f{
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .footer__nav{
@@ -466,7 +519,6 @@ margin: 24px 0;
     width: 570px;
     background-color: var(--dark_gray);
     color: var(--gray);
-    font-family: Montserrat;
     font-size: 16px;
     font-weight: 400;
     line-height: 32px;
